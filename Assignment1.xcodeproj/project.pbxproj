@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		B8990D60282E059B00618A9C /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B8990D5F282E059B00618A9C /* main.cpp */; };
+		B8990D6B282E060800618A9C /* ArrayList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B8990D6A282E060800618A9C /* ArrayList.cpp */; };
+		B8990D6D282E061300618A9C /* Token.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B8990D6C282E061300618A9C /* Token.cpp */; };
+		B8990D6F282E061D00618A9C /* TokenList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B8990D6E282E061D00618A9C /* TokenList.cpp */; };
+		B8990D71282E062900618A9C /* Dictionary.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B8990D70282E062900618A9C /* Dictionary.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +29,17 @@
 /* Begin PBXFileReference section */
 		B8990D5C282E059B00618A9C /* Assignment1 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Assignment1; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8990D5F282E059B00618A9C /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		B8990D66282E05D100618A9C /* ArrayList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArrayList.h; sourceTree = "<group>"; };
+		B8990D67282E05E500618A9C /* Token.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Token.h; sourceTree = "<group>"; };
+		B8990D68282E05EE00618A9C /* TokenList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TokenList.h; sourceTree = "<group>"; };
+		B8990D69282E05FB00618A9C /* Dictionary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Dictionary.h; sourceTree = "<group>"; };
+		B8990D6A282E060800618A9C /* ArrayList.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ArrayList.cpp; sourceTree = "<group>"; };
+		B8990D6C282E061300618A9C /* Token.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Token.cpp; sourceTree = "<group>"; };
+		B8990D6E282E061D00618A9C /* TokenList.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TokenList.cpp; sourceTree = "<group>"; };
+		B8990D70282E062900618A9C /* Dictionary.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Dictionary.cpp; sourceTree = "<group>"; };
+		B8990D73282E067900618A9C /* README.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		B8990D74282E069300618A9C /* input_file_A1.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = input_file_A1.txt; sourceTree = "<group>"; };
+		B8990D75282E06A400618A9C /* output_file_A1.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = output_file_A1.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +73,17 @@
 			isa = PBXGroup;
 			children = (
 				B8990D5F282E059B00618A9C /* main.cpp */,
+				B8990D66282E05D100618A9C /* ArrayList.h */,
+				B8990D67282E05E500618A9C /* Token.h */,
+				B8990D68282E05EE00618A9C /* TokenList.h */,
+				B8990D69282E05FB00618A9C /* Dictionary.h */,
+				B8990D6A282E060800618A9C /* ArrayList.cpp */,
+				B8990D6C282E061300618A9C /* Token.cpp */,
+				B8990D6E282E061D00618A9C /* TokenList.cpp */,
+				B8990D70282E062900618A9C /* Dictionary.cpp */,
+				B8990D73282E067900618A9C /* README.txt */,
+				B8990D74282E069300618A9C /* input_file_A1.txt */,
+				B8990D75282E06A400618A9C /* output_file_A1.txt */,
 			);
 			path = Assignment1;
 			sourceTree = "<group>";
@@ -119,7 +145,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8990D6D282E061300618A9C /* Token.cpp in Sources */,
 				B8990D60282E059B00618A9C /* main.cpp in Sources */,
+				B8990D6B282E060800618A9C /* ArrayList.cpp in Sources */,
+				B8990D71282E062900618A9C /* Dictionary.cpp in Sources */,
+				B8990D6F282E061D00618A9C /* TokenList.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
