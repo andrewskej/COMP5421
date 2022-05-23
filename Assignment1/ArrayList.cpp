@@ -1,12 +1,60 @@
 #include<iostream>
-#include<cassert>
 #include "ArrayList.h"
 using std::cout;
 using std::endl;
 using std::ostream;
 
 ArrayList::ArrayList()
-    :capacity{1},used{0},pArray{new int[1]}{}
+    : capacity{1}, used{0}, pArray{new int[1]}{
+    }
+
+//copy constructor
+ArrayList::ArrayList(const ArrayList& arl)
+: capacity{arl.getCapacity()}, used{arl.size()}, pArray{new int[arl.size()]}{
+
+    for(int i = 0; i < used; i++){
+        pArray[i] = arl.pArray[i];
+    }
+}
+
+//move constructor
+ArrayList::ArrayList(ArrayList&& arl) noexcept
+    : capacity{arl.capacity}, used{arl.used}{
+    arl.capacity = 1;
+    arl.used = 0;
+    arl.pArray = nullptr;
+}
+
+//copy assignment operator overloading
+ArrayList& ArrayList::operator=(const ArrayList& rhs){
+    if(&rhs != this){
+        delete [] pArray;
+        capacity = rhs.capacity;
+        used = rhs.used;
+        pArray = new int[capacity];
+        
+        for(int i = 0; i < used; i++){
+            pArray[i] = rhs.pArray[i];
+        }
+    }
+    return *this;
+}
+
+//move assignment operator overloading
+ArrayList& ArrayList::operator=(ArrayList&& rhs) noexcept{
+    if (&rhs != this){
+        delete[] pArray;
+        
+        pArray = rhs.pArray;
+        used = rhs.used;
+        capacity = rhs.capacity;
+        
+        rhs.pArray = nullptr;
+        rhs.used = 0;
+        rhs.capacity = 0;
+    }
+    return *this;
+}
 
 
 ArrayList::~ArrayList(){
@@ -56,11 +104,7 @@ bool ArrayList::contains(int x) const {
 }
 
 
-//wip;
 bool ArrayList::get(int position, int &value) const {
-    //returns false if position is out of range
-    //otherwise, places the value stored at position
-    //in the reference parameter value and then returns true
     if(position > used) {
         return false;
         
@@ -70,7 +114,7 @@ bool ArrayList::get(int position, int &value) const {
     }
 }
 
-int ArrayList::getCapacity(){
+int ArrayList::getCapacity() const{
     return capacity;
 }
 
@@ -81,7 +125,7 @@ void ArrayList::print(ostream& sout) const{
             if(i == used-1){
                 sout << pArray[i] << "";
             } else {
-                sout << pArray[i] << ", ";
+                sout << pArray[i] << " ";
             }
         }
     } else {

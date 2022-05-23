@@ -1,7 +1,7 @@
 #ifndef ArrayList_h
 #define ArrayList_h
-using std::cout;
 using std::ostream;
+using std::cout;
 using std::endl;
 
 class ArrayList {
@@ -12,11 +12,15 @@ class ArrayList {
         void resize();
     public:
         ArrayList();
+    
         ArrayList(const ArrayList&);
-        ArrayList(ArrayList&&) noexcept;
-        ~ArrayList();
 
+        ArrayList(ArrayList&&) noexcept;
+        
+        virtual ~ArrayList();
+        
         ArrayList& operator=(const ArrayList& rhs);
+        
         ArrayList& operator=(ArrayList&& rhs) noexcept;
 
         bool empty() const;
@@ -31,7 +35,7 @@ class ArrayList {
             
         bool get (int position, int& value) const;
             
-        int getCapacity();
+        int getCapacity() const;
             
         void print (ostream& sout) const;
 
@@ -39,4 +43,4 @@ class ArrayList {
 
 ostream& operator<<(ostream& sout, const ArrayList& f);
 
-#endif /* ArrayList_h */
+#endif 
