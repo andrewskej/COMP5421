@@ -5,30 +5,30 @@ using std::endl;
 using std::ostream;
 
 ArrayList::ArrayList()
-    : capacity{1}, used{0}, pArray{new int[1]}{
-    }
+    : capacity{1}, used{0}, pArray{new int[1]}{}
 
 //copy constructor
-ArrayList::ArrayList(const ArrayList& arl)
-: capacity{arl.getCapacity()}, used{arl.size()}, pArray{new int[arl.size()]}{
+ArrayList::ArrayList(const ArrayList& originalAry)
+: capacity{originalAry.getCapacity()}, used{originalAry.size()}, pArray{new int[originalAry.size()]}{
 
     for(int i = 0; i < used; i++){
-        pArray[i] = arl.pArray[i];
+        pArray[i] = originalAry.pArray[i];
     }
 }
 
 //move constructor
-ArrayList::ArrayList(ArrayList&& arl) noexcept
-    : capacity{arl.capacity}, used{arl.used}{
-    arl.capacity = 1;
-    arl.used = 0;
-    arl.pArray = nullptr;
+ArrayList::ArrayList(ArrayList&& originalAry) noexcept
+    : capacity{originalAry.capacity}, used{originalAry.used}{
+        originalAry.capacity = 1;
+        originalAry.used = 0;
+        originalAry.pArray = nullptr;
 }
 
 //copy assignment operator overloading
 ArrayList& ArrayList::operator=(const ArrayList& rhs){
     if(&rhs != this){
         delete [] pArray;
+        
         capacity = rhs.capacity;
         used = rhs.used;
         pArray = new int[capacity];

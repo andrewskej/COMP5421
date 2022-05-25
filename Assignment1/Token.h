@@ -18,9 +18,9 @@ class Token {
 
         Token(const char* cstr, int line_num);
     
-        Token(const Token&);
+        Token(const Token& token);
         
-        Token(Token&&);
+        Token(Token&& token) noexcept;
         
         virtual ~Token();
         

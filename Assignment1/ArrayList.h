@@ -38,7 +38,7 @@ class ArrayList {
         int getCapacity() const;
             
         void print (ostream& sout) const;
-
+    
 };
 
 ostream& operator<<(ostream& sout, const ArrayList& f);

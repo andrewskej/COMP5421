@@ -10,17 +10,19 @@ Token::Token(const char *astr, int line_num)
 };
 
 
-Token::Token(const Token& tkn)
-: frequency{tkn.getFrequency()}, cstr{tkn.cstr}, number_list{tkn.getNumberList()}{
-    strcpy(tkn.cstr, cstr);
+Token::Token(const Token& originalTkn)
+: frequency{originalTkn.getFrequency()}, cstr{new char[strlen(originalTkn.cstr) + 1]}, number_list{originalTkn.getNumberList()}{
+    strcpy(cstr, originalTkn.cstr);
 }
 
-Token::Token(Token&& tkn)
-: frequency{tkn.frequency}, cstr{tkn.cstr}, number_list{tkn.number_list}{
-    cout << "--Token:move constructor--" << endl;
-    tkn.cstr = nullptr;
-    tkn.frequency = 0;
-    //how to remove tkn.number_list ? 
+Token::Token(Token&& originalTkn) noexcept
+: frequency{originalTkn.frequency}, cstr{originalTkn.cstr}, number_list{originalTkn.number_list}{
+
+    number_list = std::move(originalTkn.number_list);
+    
+    originalTkn.cstr = new char[1];
+    originalTkn.cstr[0] = NULL;
+    originalTkn.frequency = 0;
 }
 
 Token& Token::operator=(const Token& rhs){
@@ -35,22 +37,21 @@ Token& Token::operator=(const Token& rhs){
 }
 
 Token& Token::operator=(Token&& rhs) noexcept{
-    cout << "--Token:move assignment--" << endl;
     if(&rhs != this){
         delete[] cstr;
-        cstr = new char[strlen(rhs.cstr) + 1];
-        strcpy(cstr, rhs.cstr);
+        cstr = rhs.cstr;
         frequency = rhs.frequency;
-        number_list = rhs.number_list;
-        rhs.cstr = nullptr;
+        number_list = std::move(rhs.number_list);
+        
+        rhs.cstr = new char[1];
+        rhs.cstr[0] = NULL;
         rhs.frequency = 0;
-        //how to remove rhs.number_list?
     }
     return *this;
 }
 
 Token::~Token(){
-    delete [] cstr;
+    delete[] cstr;
 }
 
 
@@ -73,9 +74,13 @@ int Token::getFrequency() const {
 }
 
 void Token::print(ostream& sout) const {
-    if(cstr){ sout << cstr; }
-    sout << " (" << frequency << ") ";
-    if(number_list.size()){sout << number_list;}
+    if(c_str()){ sout << c_str(); }
+
+    sout << " (" << getFrequency() << ") ";
+
+    if(getNumberList().size()){
+        sout << getNumberList();
+    }
 }
 
 const ArrayList& Token::getNumberList() const{
@@ -83,13 +88,11 @@ const ArrayList& Token::getNumberList() const{
 }
 
 const int Token::compare(const Token& aToken){
-    if(aToken.cstr > cstr){
+    if(cstr == NULL){
         return 1;
-    }else if(aToken.cstr < cstr){
-        return -1;
-    }else {
-        return 0;
-    }
+    } else {
+        return std::strcmp(cstr, aToken.cstr);
+    }   
 }
 
 ostream& operator<<(ostream& sout, const Token& t){
