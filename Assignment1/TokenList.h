@@ -31,7 +31,7 @@ private:
     
 public:
     TokenList();
-    
+       
     TokenList(const TokenList& list);
     
     TokenList(TokenList&& list);
@@ -66,6 +66,7 @@ public:
 
     void addBack(const Token& aToken);
 
+    void clear();
 };
 
 ostream& operator<<(ostream& sout, const Token& f);

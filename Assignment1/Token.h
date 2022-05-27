@@ -36,11 +36,15 @@ class Token {
     
         int getFrequency () const;
     
+        void setFrequency (int frequency);
+        
         void print (ostream& sout) const;
         
         const ArrayList& getNumberList() const;
-
-        const int compare(const Token& aToken);
+        
+        void setNumberList(ArrayList& numberList);
+    
+        const int compare(const Token& aToken) const;
     
 };
 

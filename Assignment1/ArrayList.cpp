@@ -51,7 +51,7 @@ ArrayList& ArrayList::operator=(ArrayList&& rhs) noexcept{
         
         rhs.pArray = nullptr;
         rhs.used = 0;
-        rhs.capacity = 0;
+        rhs.capacity = 1;
     }
     return *this;
 }
@@ -109,7 +109,7 @@ bool ArrayList::get(int position, int &value) const {
         return false;
         
     } else {
-        pArray[position] = value;
+        value = pArray[position];
         return true;
     }
 }

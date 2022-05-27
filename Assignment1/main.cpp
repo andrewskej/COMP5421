@@ -1,10 +1,6 @@
 #include <iostream>
-#include <vector>
-#include<cassert>
-#include "Token.h"
-#include "TokenList.h"
-
-//#include "Dictionary.h"
+#include <cassert>
+#include "Dictionary.h"
 
 using std::cout;
 using std::cin;
@@ -14,23 +10,17 @@ using std::vector;
 using std::move;
 
 int main(int argc, const char * argv[]) {
+
+//    cout << "Enter the name of input text file: " ;
+//    string filename;
+//    cin >> filename;
+//    Dictionary dictionary(filename);
     
-    TokenList bucket;
-    Token t1("Hello", 1);
-    bucket.addSorted(t1);
-    Token t2("Hello", 11);
-    bucket.addSorted(t2);
-    Token t3("Hello", 111);
-    bucket.addSorted(t3);
     
-    Token tArray[]{ Token("How", 1), Token("are", 11), Token("you", 2),
-    Token("today?", 22), Token("#tag", 3), Token("bye", 3) };
-    for (Token t : tArray)
-    {
-    bucket.addSorted(t);
-    }
-    bucket.print(cout); // ideally we prefer cout << bucket << endl;
-    cout << endl;
+    Dictionary dictionary("/Users/andrewskej/Documents/dev/concordia/COMP5421/Assignment1/input_file_A1.txt");
+    dictionary.print(cout);
+
     return 0; // 0 means success!
   
 }
+

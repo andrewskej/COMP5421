@@ -73,8 +73,12 @@ int Token::getFrequency() const {
     return frequency;
 }
 
+void Token::setFrequency(int freq){
+    this -> frequency = freq;
+}
+
 void Token::print(ostream& sout) const {
-    if(c_str()){ sout << c_str(); }
+    if(cstr != NULL){ sout << cstr; }
 
     sout << " (" << getFrequency() << ") ";
 
@@ -87,7 +91,11 @@ const ArrayList& Token::getNumberList() const{
     return number_list;
 }
 
-const int Token::compare(const Token& aToken){
+void Token::setNumberList(ArrayList& numberList){
+    this -> number_list = numberList;
+}
+
+const int Token::compare(const Token& aToken) const{
     if(cstr == NULL){
         return 1;
     } else {
