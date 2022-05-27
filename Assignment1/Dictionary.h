@@ -12,7 +12,7 @@ class Dictionary {
     public:
         Dictionary(const string& filename);
         void processToken(const string& token, int linenum);
-        void print(ostream& out) const;
+        void print(ostream& cout) const;
         Dictionary() = delete; // no default ctor
         ~Dictionary() = default; // default dtor
         Dictionary(const Dictionary& ) = default; // copy ctor

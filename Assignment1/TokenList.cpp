@@ -1,13 +1,11 @@
 #include <stdio.h>
 #include "TokenList.h"
 #include "Token.h"
-using std::cout;
-using std::endl;
+
 TokenList::TokenList(): head{nullptr}, tail{nullptr}, theSize{}{}
 
 //copy constructor
 TokenList::TokenList(const TokenList& list): head{}, tail{}, theSize{}{
-    cout << "copy ctor" << endl;
     head = list.head;
     tail = list.tail;
     theSize = list.theSize;
@@ -15,7 +13,6 @@ TokenList::TokenList(const TokenList& list): head{}, tail{}, theSize{}{
 
 //move constructor
 TokenList::TokenList(TokenList&& list): head{}, tail{}, theSize{}{
-    cout << "move ctor" << endl;
     head = list.head;
     tail = list.tail;
     theSize = list.theSize;
@@ -28,7 +25,6 @@ TokenList::TokenList(TokenList&& list): head{}, tail{}, theSize{}{
 //copy assignment
 TokenList& TokenList::operator=(const TokenList& rhs){
     if(&rhs != this){
-        cout << "copy assignment" << endl;
         delete head;
         head = rhs.head;
         tail = rhs.tail;
@@ -41,7 +37,6 @@ TokenList& TokenList::operator=(const TokenList& rhs){
 //move assignment
 TokenList& TokenList::operator=(TokenList&& rhs){
     if(&rhs != this){
-        cout << "move assignment" << endl;
         delete head;
         head = rhs.head;
         tail = rhs.tail;
@@ -56,7 +51,6 @@ TokenList& TokenList::operator=(TokenList&& rhs){
 }
 
 TokenList::~TokenList(){
-//    if(head -> next != nullptr)head -> next = nullptr;
     head = NULL;
     tail = NULL;
 }
@@ -89,12 +83,11 @@ size_t TokenList::size() const {
 }
 
 void TokenList::print(ostream& sout) const {
-//    sout << endl;
      for (TNode* temp = head; temp != nullptr; temp = temp -> next)
      {
-         sout << " " << temp -> theToken << " " << endl;
+         sout << " " << temp -> theToken << " " << std::endl;
      }
-     sout << endl;
+     sout << std::endl;
 }
 
  
@@ -199,18 +192,14 @@ bool TokenList::search(const Token& aToken) const{
         while(currentNode -> next != NULL){
             int compareVal = (currentNode -> theToken).compare(aToken);
             if(compareVal == 0){
-                cout << "It is in the list" << endl;
                 return true;
             } else {
-                cout << "Checking next node..." << endl;
                 currentNode = currentNode -> next;
             }
         }
     }else{
-        cout << "Empty list" << endl;
         return false;
     }
-    cout << "No result" << endl;
     return false;
 }
 

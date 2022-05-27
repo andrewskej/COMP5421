@@ -1,8 +1,6 @@
 #ifndef ArrayList_h
 #define ArrayList_h
 using std::ostream;
-using std::cout;
-using std::endl;
 
 class ArrayList {
     private:

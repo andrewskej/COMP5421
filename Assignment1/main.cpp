@@ -2,12 +2,7 @@
 #include <cassert>
 #include "Dictionary.h"
 
-using std::cout;
-using std::cin;
-using std::endl;
-using std::string;
-using std::vector;
-using std::move;
+
 
 int main(int argc, const char * argv[]) {
 
@@ -18,7 +13,7 @@ int main(int argc, const char * argv[]) {
     
     
     Dictionary dictionary("/Users/andrewskej/Documents/dev/concordia/COMP5421/Assignment1/input_file_A1.txt");
-    dictionary.print(cout);
+    dictionary.print(std::cout);
 
     return 0; // 0 means success!
   

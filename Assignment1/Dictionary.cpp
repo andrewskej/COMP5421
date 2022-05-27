@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include "Dictionary.h"
 #include "Token.h"
 #include "TokenList.h"
@@ -35,7 +34,7 @@ Dictionary::Dictionary(const string& filename) : filename(filename){
     fin.close();
 }
 
-void Dictionary::print(ostream& out) const{
+void Dictionary::print(ostream& cout) const{
     char alphabet[] = {
         'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','\0'
     };

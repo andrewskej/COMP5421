@@ -21,11 +21,11 @@ class Token {
         Token(const Token& token);
         
         Token(Token&& token) noexcept;
-        
+
         virtual ~Token();
         
         Token& operator=(const Token& rhs);
-        
+
         Token& operator=(Token&& rhs) noexcept;
         
         const char* c_str() const;

@@ -1,7 +1,5 @@
 #include <cstring>
 #include "Token.h"
-using std::cout;
-using std::endl;
 
 Token::Token(const char *astr, int line_num)
 : frequency{1}, cstr{new char[strlen(astr) + 1]}, number_list{} {

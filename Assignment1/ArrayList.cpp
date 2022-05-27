@@ -1,7 +1,5 @@
 #include<iostream>
 #include "ArrayList.h"
-using std::cout;
-using std::endl;
 using std::ostream;
 
 ArrayList::ArrayList()
