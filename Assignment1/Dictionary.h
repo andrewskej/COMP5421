@@ -2,8 +2,8 @@
 #define DICTIONARY_H_
 #include<string>
 #include "TokenList.h"
-
 using std::string;
+
 class Dictionary {
     private:
         string filename;

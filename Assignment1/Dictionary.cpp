@@ -5,6 +5,7 @@
 #include <sstream>
 #include <string>
 #include <fstream>
+using std::string;
 
 Dictionary::Dictionary(const string& filename) : filename(filename){
     

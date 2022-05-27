@@ -19,7 +19,7 @@ Token::Token(Token&& originalTkn) noexcept
     number_list = std::move(originalTkn.number_list);
     
     originalTkn.cstr = new char[1];
-    originalTkn.cstr[0] = NULL;
+    originalTkn.cstr[0] = '\0';
     originalTkn.frequency = 0;
 }
 
@@ -42,7 +42,7 @@ Token& Token::operator=(Token&& rhs) noexcept{
         number_list = std::move(rhs.number_list);
         
         rhs.cstr = new char[1];
-        rhs.cstr[0] = NULL;
+        rhs.cstr[0] = '\0';
         rhs.frequency = 0;
     }
     return *this;
