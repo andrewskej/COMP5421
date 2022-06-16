@@ -30,17 +30,11 @@ void menuRouter(int menuOptionInt, string displayInputString){
     set<char> displayInputSet (displayInputString.begin(), displayInputString.end());
 
     string theSeparators = ". ;?(),13579=-\"\t\n";
-    
-    string filename = "/Users/andrewskej/Documents/dev/concordia/COMP5421/Assignment2/Assignment2/Seuss.txt";
 
-    cout << "filename: " << filename << endl;
-    cout << "selected:" << menuOptionInt << endl;
-
-    cout << "will display: [ ";
-    for(char displayElement: displayInputSet){
-        cout << displayElement << " ";
-    }
-    cout << "]" << endl;
+    cout << "filename: " << endl;
+    string filename;
+    cin >> filename;
+    cout << "filename:" << filename << endl;
     
     Dictionary dictionary(filename, theSeparators);
     cout << " " << endl;
