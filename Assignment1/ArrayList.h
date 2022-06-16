@@ -3,42 +3,42 @@
 using std::ostream;
 
 class ArrayList {
-    private:
-        int *pArray;
-        int capacity;
-        int used;
-        void resize();
-    public:
-        ArrayList();
-    
-        ArrayList(const ArrayList&);
+private:
+    int* pArray;  //pointer of the Arraylist
+    int capacity; //whole size of the Arraylist
+    int used;     //used size of the Arraylist
+    void resize(); //resize the Arraylist
+public:
+    ArrayList();  //basic constructor
 
-        ArrayList(ArrayList&&) noexcept;
-        
-        virtual ~ArrayList();
-        
-        ArrayList& operator=(const ArrayList& rhs);
-        
-        ArrayList& operator=(ArrayList&& rhs) noexcept;
+    ArrayList(const ArrayList&); //copy constructor
 
-        bool empty() const;
-        
-        bool full() const;
-        
-        int size() const;
-            
-        void pushBack(int x);
-            
-        bool contains (int x) const;
-            
-        bool get (int position, int& value) const;
-            
-        int getCapacity() const;
-            
-        void print (ostream& sout) const;
-    
+    ArrayList(ArrayList&&) noexcept; //move constructor
+
+    virtual ~ArrayList(); //destructor
+
+    ArrayList& operator=(const ArrayList& rhs); //copy assignment
+
+    ArrayList& operator=(ArrayList&& rhs) noexcept; //move assignment
+
+    bool empty() const; //checks if empty
+
+    bool full() const; //checks if full
+
+    int size() const; //returns its size
+
+    void pushBack(int x); //push the value into the Arraylist
+
+    bool contains(int x) const; //checks if the Arraylist contains the given value
+
+    bool get(int position, int& value) const; //checks if the given value is located at given position
+
+    int getCapacity() const; //returns capacity of the Arraylist
+
+    void print(ostream& sout) const; //print the Arraylist
+
 };
 
-ostream& operator<<(ostream& sout, const ArrayList& f);
+ostream& operator<<(ostream& sout, const ArrayList& f); //operator overloading
 
 #endif 

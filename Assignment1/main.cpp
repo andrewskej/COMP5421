@@ -1,18 +1,17 @@
 #include <iostream>
-#include <cassert>
 #include "Dictionary.h"
 
+using std::cout;
+using std::cin;
 
+int main(int argc, const char* argv[]) {
 
-int main(int argc, const char * argv[]) {
-
-    std::cout << "Enter the name of input text file: " ;
-    string filename;
-    std::cin >> filename;
+//    cout << "Enter the name of input text file: " ;
+    string filename{"/Users/andrewskej/Documents/dev/concordia/COMP5421/Assignment1/input_file_A1.txt"};
+//    cin >> filename;
     Dictionary dictionary(filename);
     dictionary.print(std::cout);
 
     return 0; // 0 means success!
-  
-}
 
+}
