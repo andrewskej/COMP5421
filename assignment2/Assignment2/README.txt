@@ -24,4 +24,6 @@ It was tested in both environment and should work in both without any problem, b
 
 
 [Possible issue - troubleshooting]:
-the source file, "Seuss", sometimes changes ' this upperstrophe to unparse-able upperstrophe, when the text file was moved between mac and windows environment. If menu number 1 creates an error on windows environment, please kindly replace the Seuss.txt file.
+the source file, "Seuss", sometimes changes ' <- this upperstrophe to ’ <- unreadable upperstrophe, 
+when the text file was moved between mac and windows environment. 
+If menu number 1 creates an error on windows environment due to this error, please kindly replace the Seuss.txt file.
