@@ -80,6 +80,7 @@ class Dictionary{
         //for some reason adding static was causing too many errors
         static string escape_tab_newline_chars(const string& separators);
     
+        static string restore_fake_tab_newline_chars(const string& str);
         //=== utility functions ===
         //to find if given list has given token
         bool hasToken(list<Token>& tokenList, Token& targetToken);

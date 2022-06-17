@@ -9,6 +9,7 @@ using std::ostream;
 using std::cin;
 using std::cout;
 using std::endl;
+using std::getline;
 
 string mainInterface(){
     cout << "" << endl;
@@ -29,17 +30,23 @@ string mainInterface(){
 void menuRouter(int menuOptionInt, string displayInputString){
     set<char> displayInputSet (displayInputString.begin(), displayInputString.end());
 
-    string theSeparators = ". ;?(),13579=-\"\t\n";
+    string theSeparators{};
+    string filename{};
 
-    cout << "filename: " << endl;
-    string filename;
+    cout << "Directory Source File: ";
     cin >> filename;
-    cout << "filename:" << filename << endl;
+    
+    cout << "separator characters: ";
+    cin.ignore();  //this will allow to escape semicolon to keep the entire input
+    getline(cin, theSeparators);
+
+    theSeparators = Dictionary::restore_fake_tab_newline_chars(theSeparators);
     
     Dictionary dictionary(filename, theSeparators);
     cout << " " << endl;
 
-
+    //This switch selectively runs print options
+    //switch by upon selected menuOption & if there is displayInputSet
     switch(menuOptionInt){
         case 1:
             dictionary.print_input_lines(displayInputSet);
@@ -81,18 +88,27 @@ int main() {
     
     string userInput{};
     string displayInputString{};
+    //only one of these numbers are accepted as menu option
     set<int> validMenuOptions = {0,1,2,3,4,5};
     char menuOption{};
+    //initialize menuOption with 99, for while loop condition
     int menuOptionInt{99};
 
+    //while you are not giving 0, it loops
     while(menuOptionInt != 0){
+        //get userInput here
         userInput = mainInterface();
 
+        //first letter of the input decides menu
         menuOption = userInput[0];
+        //convert menuOption into int
         menuOptionInt = menuOption - '0';
+        //except for the first letter, the rest is inputString to display
         displayInputString = userInput.substr(1, userInput.length());
        
+        //if menuOption is valid (between 0 - 5),
         if(menuOptionInt && validMenuOptions.count(menuOptionInt) == 1){
+            //run menuRouter to run appropriate functions
             menuRouter(menuOptionInt, displayInputString);
         } else if(userInput[0] == 0 || menuOptionInt == 0){
             cout << "terminating..." << endl;

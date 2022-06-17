@@ -18,15 +18,11 @@ using std::ifstream;
 using std::forward_list;
 using std::setw;
 
-Dictionary::Dictionary(const string& filename, const string& theSeparators): filename(filename), theSeparators(theSeparators){
-
-    cout << "Separator characters:" << escape_tab_newline_chars(theSeparators) << endl;
-    
+Dictionary::Dictionary(const string& filename, const string& theSeparators): filename(filename), theSeparators(theSeparators){    
     vector<string> v1{};
     array<list<Token>, 27> t1{};
     this -> input_lines = v1;
     this -> token_list_buckets = t1;
-    
     ifstream fin(filename);
     
     if (!fin){
@@ -167,6 +163,7 @@ bool tokenTextCompare(Token token1, Token token2){
     return token1 < token2;
 }
 
+//when there's no inputStringSet, this template would run and just print everything under given filter
 void Dictionary::print_sorted_template(int filter) const {
     cout << "===================" << endl;
     //prepare a list of alphabets
@@ -204,6 +201,7 @@ void Dictionary::print_sorted_template(int filter) const {
     }
 }
 
+//if there's char_set and filter, this template will run and display certain letters from char_set, under given filter option
 void Dictionary::print_sorted_template(set<char>& char_set, int filter) const{
     cout << "===================" << endl;
     //prepare a list of alphabets
@@ -224,12 +222,13 @@ void Dictionary::print_sorted_template(set<char>& char_set, int filter) const{
             cout << "<" << (char) tolower(subTitleAlphabet) << ">" << endl;
 
             if (filter == 2) {
+                //option 2 is distinct from 3, 4, 5
                 for (Token tkn : token_list_buckets[i]){
                    cout << setw(20) << tkn << "\n";
                 }
             } else {
                 forward_list<Token> flist(token_list_buckets[i].begin(), token_list_buckets[i].end());
-
+                //option 3, 4, 5 shares almost the same logic, only the type of filter is different.
                 switch(filter){
                     case 3: flist.sort(tokenTextCompare);
                         break;
@@ -296,7 +295,6 @@ void Dictionary::print_sorted_on_token_length(set<char>& char_set) const {
 //replace \t and \n with \\t and \\n in separators and returns the resulting string
 string Dictionary::escape_tab_newline_chars(const string& separators){
     string result{};
-
     for (char ch : separators){
         switch (ch){
             case '\n':
@@ -310,9 +308,38 @@ string Dictionary::escape_tab_newline_chars(const string& separators){
                 break;
         }
     }
+
     return result;
 }
 
+
+string Dictionary::restore_fake_tab_newline_chars(const string& str)
+{
+   string fake_tab{ "\\t" }; // two characters, \ and t
+   string real_tab{ "\t" };  // one character, \t
+
+   string temp{ str };
+   // restore tabs
+   string::size_type pos = temp.find(fake_tab);
+   while (pos != string::npos)
+   {
+      temp.replace(pos, 2, real_tab);
+      pos = temp.find(fake_tab);
+   }
+
+   string fake_newline{ "\\n" }; // two characters, \ and n
+   string real_newline{ "\n" };  // one character, \n
+
+   // restore newlines
+   pos = temp.find(fake_newline);
+   while (pos != string::npos)
+   {
+      temp.replace(pos, 2, real_newline);
+      pos = temp.find(fake_newline);
+   }
+
+   return temp;
+}
 
 bool Dictionary::hasToken(list<Token>& tokenList, Token& targetToken){
     for (list<Token>::iterator it = tokenList.begin(); it != tokenList.end(); ++it){

@@ -31,7 +31,7 @@
 		B83CBA3F284837AF006B9A05 /* Token.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Token.h; sourceTree = "<group>"; };
 		B83CBA41284837D4006B9A05 /* Dictionary.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Dictionary.cpp; sourceTree = "<group>"; };
 		B83CBA42284837D4006B9A05 /* Dictionary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Dictionary.h; sourceTree = "<group>"; };
-		B8F2B506284C5F56000C915C /* output_file_A1.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = output_file_A1.txt; path = ../../Assignment1/output_file_A1.txt; sourceTree = "<group>"; };
+		B8F2B506284C5F56000C915C /* output_file_A2.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = output_file_A2.txt; path = ../../Assignment1/output_file_A2.txt; sourceTree = "<group>"; };
 		B8F2B507284C5F56000C915C /* README.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = README.txt; path = ../../Assignment1/README.txt; sourceTree = "<group>"; };
 		B8F2B508284C5FF7000C915C /* Seuss.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Seuss.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -72,7 +72,7 @@
 				B83CBA3E284837AF006B9A05 /* Token.cpp */,
 				B83CBA3F284837AF006B9A05 /* Token.h */,
 				B83CBA372845B351006B9A05 /* main.cpp */,
-				B8F2B506284C5F56000C915C /* output_file_A1.txt */,
+				B8F2B506284C5F56000C915C /* output_file_A2.txt */,
 				B8F2B507284C5F56000C915C /* README.txt */,
 			);
 			path = Assignment2;

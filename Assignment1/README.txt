@@ -6,7 +6,7 @@ for windows:
 
 move in to location where all the files are, and enter as below in terminal:
 1. g++ main.cpp Dictionary.cpp Token.cpp -o main.exe -std=c++17
-2. run 'main.exe'
+2. run './main.exe'
 
 
 for mac:
