@@ -3,9 +3,14 @@
 #include <iostream>
 #include <array>
 #include <cassert>
+#include <iomanip>
+#include <algorithm>
 
 using std::cin;
 using std::cout;
+using std::endl;
+using std::abs;
+using std::max;
 using std::array;
 using std::ostream;
 using std::istream;
@@ -15,7 +20,7 @@ class Quad{
         array <double, 4> quad{};
 
     public:
-        constexpr static const double tolerance{ 1.0E-6 };
+        static inline const double tolerance{ 1.0E-6 };
         
         //ctor
         Quad(double x1 = 0.0, double x2 = 0.0, double x3 = 0.0, double x4 = 0.0);
