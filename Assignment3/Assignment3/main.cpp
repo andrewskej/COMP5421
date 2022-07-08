@@ -206,6 +206,7 @@ void test_relational_operators(){
 
     std::string vowels{ "AaEeIiOoUu" };
     assert(q != (q + tol));
+
     assert(q != (q + 0.25 * tol));    
     assert(q == (q + 0.15 * tol));
     assert(q == q);
