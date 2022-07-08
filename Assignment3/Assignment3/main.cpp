@@ -5,7 +5,6 @@ using std::cout;
 using std::cin;
 using std::endl;
 
-void test_getter_setter();
 
 void test_insersion_extraction_operator();
 void test_constructors_and_equality();
@@ -207,7 +206,7 @@ void test_relational_operators(){
     std::string vowels{ "AaEeIiOoUu" };
     assert(q != (q + tol));
 
-    assert(q != (q + 0.25 * tol));    
+    assert(q != (q + 0.25 * tol));
     assert(q == (q + 0.15 * tol));
     assert(q == q);
 
