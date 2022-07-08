@@ -34,7 +34,11 @@ Quad Quad::inverse() const{
 
 //absolute value of Quad
 double Quad::absoluteValue() const{
-    return abs(quad.at(0)) + abs(quad.at(1)) + abs(quad.at(2)) + abs(quad.at(3)) ;
+    double abs1 = quad.at(0) > 0 ? quad.at(0) : 0 - quad.at(0);
+    double abs2 = quad.at(1) > 0 ? quad.at(1) : 0 - quad.at(1);
+    double abs3 = quad.at(2) > 0 ? quad.at(2) : 0 - quad.at(2);
+    double abs4 = quad.at(3) > 0 ? quad.at(3) : 0 - quad.at(3);
+    return abs1 + abs2 + abs3 + abs4 ;
 }
 
 // << overload
