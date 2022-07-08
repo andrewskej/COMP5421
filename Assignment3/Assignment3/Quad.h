@@ -19,7 +19,7 @@ class Quad{
         array <double, 4> quad{};
 
     public:
-        static inline const double tolerance{ 1.0E-6 };
+        static constexpr const double tolerance{ 1.0E-6 };
         
         //ctor
         Quad(double x1 = 0.0, double x2 = 0.0, double x3 = 0.0, double x4 = 0.0);
