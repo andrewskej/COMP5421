@@ -2,6 +2,8 @@
 
 using std::cout;
 using std::endl;
+using std::abs;
+using std::max;
 
 //constructor
 Quad::Quad(double x1, double x2, double x3, double x4): quad{x1, x2, x3, x4}{
