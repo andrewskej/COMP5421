@@ -1,4 +1,5 @@
 #include "Shape.h"
+#include<typeinfo>
 
 //Static id initialize
 int Shape::id{ 0 };

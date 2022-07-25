@@ -1,6 +1,5 @@
 #include<iostream>
 #include<vector>
-#include<typeinfo>
 #include "Rhombus.h"
 #include "Rectangle.h"
 #include "AcuteTriangle.h"
