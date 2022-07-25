@@ -7,7 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B8AD58A0287D251100F3C9D3 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B8AD589F287D251100F3C9D3 /* main.cpp */; };
+		B8AD58AD28850EB000F3C9D3 /* ShapeTestDriver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B8AD58AC28850EB000F3C9D3 /* ShapeTestDriver.cpp */; };
+		B8AD58B4288A0D5E00F3C9D3 /* Shape.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B8AD58B3288A0D5E00F3C9D3 /* Shape.cpp */; };
+		B8AD58B6288A0D6F00F3C9D3 /* Rectangle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B8AD58B5288A0D6F00F3C9D3 /* Rectangle.cpp */; };
+		B8AD58B8288A0D8D00F3C9D3 /* Rhombus.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B8AD58B7288A0D8D00F3C9D3 /* Rhombus.cpp */; };
+		B8AD58BA288A0DA800F3C9D3 /* AcuteTriangle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B8AD58B9288A0DA800F3C9D3 /* AcuteTriangle.cpp */; };
+		B8AD58BC288A0DBB00F3C9D3 /* RightTriangle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B8AD58BB288A0DBB00F3C9D3 /* RightTriangle.cpp */; };
+		B8AD58BE288A0E0F00F3C9D3 /* Canvas.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B8AD58BD288A0E0F00F3C9D3 /* Canvas.cpp */; };
+		B8AD58C0288A0E9A00F3C9D3 /* Triangle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B8AD58BF288A0E9A00F3C9D3 /* Triangle.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,7 +31,21 @@
 
 /* Begin PBXFileReference section */
 		B8AD589C287D251100F3C9D3 /* Assignment4 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Assignment4; sourceTree = BUILT_PRODUCTS_DIR; };
-		B8AD589F287D251100F3C9D3 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		B8AD58A828850E4300F3C9D3 /* Rhombus.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Rhombus.h; sourceTree = "<group>"; };
+		B8AD58A928850E5A00F3C9D3 /* Rectangle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Rectangle.h; sourceTree = "<group>"; };
+		B8AD58AC28850EB000F3C9D3 /* ShapeTestDriver.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ShapeTestDriver.cpp; sourceTree = "<group>"; };
+		B8AD58AE28850EC900F3C9D3 /* AcuteTriangle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AcuteTriangle.h; sourceTree = "<group>"; };
+		B8AD58AF28850EDB00F3C9D3 /* RightTriangle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RightTriangle.h; sourceTree = "<group>"; };
+		B8AD58B028850EF100F3C9D3 /* Canvas.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Canvas.h; sourceTree = "<group>"; };
+		B8AD58B22887B74100F3C9D3 /* Shape.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Shape.h; sourceTree = "<group>"; };
+		B8AD58B3288A0D5E00F3C9D3 /* Shape.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Shape.cpp; sourceTree = "<group>"; };
+		B8AD58B5288A0D6F00F3C9D3 /* Rectangle.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Rectangle.cpp; sourceTree = "<group>"; };
+		B8AD58B7288A0D8D00F3C9D3 /* Rhombus.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Rhombus.cpp; sourceTree = "<group>"; };
+		B8AD58B9288A0DA800F3C9D3 /* AcuteTriangle.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = AcuteTriangle.cpp; sourceTree = "<group>"; };
+		B8AD58BB288A0DBB00F3C9D3 /* RightTriangle.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = RightTriangle.cpp; sourceTree = "<group>"; };
+		B8AD58BD288A0E0F00F3C9D3 /* Canvas.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Canvas.cpp; sourceTree = "<group>"; };
+		B8AD58BF288A0E9A00F3C9D3 /* Triangle.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Triangle.cpp; sourceTree = "<group>"; };
+		B8AD58C1288A0EA900F3C9D3 /* Triangle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Triangle.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +78,21 @@
 		B8AD589E287D251100F3C9D3 /* Assignment4 */ = {
 			isa = PBXGroup;
 			children = (
-				B8AD589F287D251100F3C9D3 /* main.cpp */,
+				B8AD58BF288A0E9A00F3C9D3 /* Triangle.cpp */,
+				B8AD58BB288A0DBB00F3C9D3 /* RightTriangle.cpp */,
+				B8AD58B7288A0D8D00F3C9D3 /* Rhombus.cpp */,
+				B8AD58B22887B74100F3C9D3 /* Shape.h */,
+				B8AD58AF28850EDB00F3C9D3 /* RightTriangle.h */,
+				B8AD58A828850E4300F3C9D3 /* Rhombus.h */,
+				B8AD58AE28850EC900F3C9D3 /* AcuteTriangle.h */,
+				B8AD58A928850E5A00F3C9D3 /* Rectangle.h */,
+				B8AD58AC28850EB000F3C9D3 /* ShapeTestDriver.cpp */,
+				B8AD58B028850EF100F3C9D3 /* Canvas.h */,
+				B8AD58B3288A0D5E00F3C9D3 /* Shape.cpp */,
+				B8AD58B5288A0D6F00F3C9D3 /* Rectangle.cpp */,
+				B8AD58B9288A0DA800F3C9D3 /* AcuteTriangle.cpp */,
+				B8AD58BD288A0E0F00F3C9D3 /* Canvas.cpp */,
+				B8AD58C1288A0EA900F3C9D3 /* Triangle.h */,
 			);
 			path = Assignment4;
 			sourceTree = "<group>";
@@ -119,7 +154,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B8AD58A0287D251100F3C9D3 /* main.cpp in Sources */,
+				B8AD58BC288A0DBB00F3C9D3 /* RightTriangle.cpp in Sources */,
+				B8AD58B8288A0D8D00F3C9D3 /* Rhombus.cpp in Sources */,
+				B8AD58AD28850EB000F3C9D3 /* ShapeTestDriver.cpp in Sources */,
+				B8AD58C0288A0E9A00F3C9D3 /* Triangle.cpp in Sources */,
+				B8AD58BE288A0E0F00F3C9D3 /* Canvas.cpp in Sources */,
+				B8AD58B4288A0D5E00F3C9D3 /* Shape.cpp in Sources */,
+				B8AD58B6288A0D6F00F3C9D3 /* Rectangle.cpp in Sources */,
+				B8AD58BA288A0DA800F3C9D3 /* AcuteTriangle.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
