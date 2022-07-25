@@ -5,16 +5,17 @@ using std::ostream;
 /*
 * basic constructor
 */
-ArrayList::ArrayList()
-    : capacity{ 1 }, used{ 0 }, pArray{ new int[1] }{}
+ArrayList::ArrayList() : capacity{ 1 }, used{ 0 }, pArray{ new int[1] }{}
 
 /*
 * copy constructor
 @param originalAry: the original ArrayList to be copied
 */
 ArrayList::ArrayList(const ArrayList& originalAry)
-    : capacity{ originalAry.getCapacity() }, used{ originalAry.size() }, pArray{ new int[originalAry.size()] }{
-
+    : capacity{ originalAry.getCapacity() }, 
+        used{ originalAry.size() }, 
+        pArray{ new int[originalAry.size()] }
+{
     for (int i = 0; i < used; i++) {
         pArray[i] = originalAry.pArray[i];
     }
