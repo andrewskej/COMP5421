@@ -48,9 +48,8 @@ WordsVector task_1_Test_Drive(const std::string& infilename)
     WordsVector words_vector = read_words_into_vector(infilename);
     validate_words_vector(words_vector);
     cout << "All words extracted OK\n";
-    cout << "All words in the input file\n";
-    print_words_vector(words_vector);
-    cout << "Test 1 OK" << endl;
+//    cout << "All words in the input file\n";
+//    print_words_vector(words_vector);
     return words_vector;
 }
 
@@ -59,11 +58,11 @@ WordsVector task_1_Test_Drive(const std::string& infilename)
 void validate_word_map(const WordsMap& wmap)
 {
     const auto& [word1, count1] { *wmap.begin() };
-//    cout << word1 << ": " << count1 << endl;
+    cout << word1 << ": " << count1 << endl;
     assert(word1 == "air" && count1 == 6);
 
     const auto& [word2, count2] { *std::prev(wmap.end()) };
-//    cout << word2 << ": " << count2 << endl;
+    cout << word2 << ": " << count2 << endl;
     assert(word2 == "yoke" && count2 == 8);
 
     // PreC++17 way of accessing a map's element, say the first element
@@ -87,7 +86,6 @@ void task_2_Test_Drive(const WordsVector& words_vector)
     cout << "word_map_using_lambda is OK\n";
     cout << "All words in the map generated using lambda\n";
     print_word_map(word_map_using_lambda);
-    cout << "Test 2 OK" << endl;
 }
 
 // Task 3
@@ -97,9 +95,7 @@ void task_3_Test_Drive(const WordsVector& words_vector)
     validate_word_map(word_map_using_functor);
     cout << "word_map_using_functor is OK\n";
     cout << "All words in the map generated using functor\n";
-    print_word_map(word_map_using_functor);
-    cout << "Test 3 OK" << endl;
-
+//    print_word_map(word_map_using_functor);
 }
 
 // Task 4
@@ -133,7 +129,6 @@ void task_5_Test_Drive()
     bool result_u_saw = is_palindrome(str_u_saw);
     assert(result_u_saw == false);
     cout << "the phrase \"" + str_u_saw + "\" is not a palindrome\n";
-    cout << "Test 5 OK" << endl;
 }
 
 // Task 6
@@ -164,8 +159,6 @@ void task_7_test_driver()
     cout << '\n';
     multisetUsingMyComparator(vec);
     cout << endl;
-    cout << "Test 7 OK" << endl;
-
 }
 
 // Task 8
@@ -176,8 +169,6 @@ void task_8_test_driver(int n)
     std::copy(fibs.begin(), fibs.end(), std::ostream_iterator<int>(cout, " "));
     assert(fibs[9] == 34);
     assert(fibs[14] == 377);
-    cout << "Test 8 OK" << endl;
-
 }
 
 
