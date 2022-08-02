@@ -183,7 +183,7 @@ void task_8_test_driver(int n)
 
 int main()
 {
-    std::string infilename{ "/Users/andrewskej/Documents/dev/concordia/COMP5421/Assignment5/assignment5/Text.txt" };
+    std::string infilename{ "Text.txt" };
     
     WordsVector words_vector = task_1_Test_Drive(infilename);
     task_2_Test_Drive(words_vector);
